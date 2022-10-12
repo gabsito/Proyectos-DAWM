@@ -1,0 +1,45 @@
+header{
+    text-align: center;
+}
+
+nav{
+    display: contents;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #303840;
+  }
+
+li{
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: larger;
+  }
+
+li a:hover {
+    background-color: #878a8c;
+}
+
+.logo{
+    height: 50%;
+    width: 50%;
+}
+
+html{
+    background-color: #f2f2f2 ;
+    font-family: "Teko", sans-serif;
+}
+
+
+
