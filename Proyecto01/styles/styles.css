@@ -13,6 +13,7 @@ ul {
     overflow: hidden;
     background-color: #303840;
     border-radius: 15px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   }
 
 li{
@@ -31,6 +32,11 @@ li a {
 li a:hover {
     background-color: #878a8c;
     border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+li a:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .logo{
@@ -43,6 +49,7 @@ li a:hover {
 html{
     background-color: #f2f2f2 ;
     font-family: "Teko", sans-serif;
+    font-size: 1.3em;
 }
 
 
