@@ -56,5 +56,18 @@ html{
     font-size: 1.3em;
 }
 
+section{
+    text-align: center;
+}
 
+.yo{
+    margin: 10rem;
+}
 
+.nombre{
+    margin-bottom: 0;
+}
+
+.soy{
+    margin-top: 0;
+}
