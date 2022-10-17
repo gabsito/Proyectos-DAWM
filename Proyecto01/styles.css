@@ -12,6 +12,7 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #303840;
+    border-radius: 15px;
   }
 
 li{
@@ -29,11 +30,14 @@ li a {
 
 li a:hover {
     background-color: #878a8c;
+    border-radius: 15px;
 }
 
 .logo{
-    height: 50%;
-    width: 50%;
+    height: 17vh;
+    width: 17vh;
+    min-width: 100px;
+    min-height: 100px;
 }
 
 html{
