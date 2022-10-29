@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko">
     <link rel="icon" type="image/x-icon" href="/logo/favicon.ico">
     <script type="module" src="/firebase.js"></script>
+    <script src="https://kit.fontawesome.com/3505b5770c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -15,12 +16,13 @@
             <img class="logo" src="../logo/short.jpg" alt="</Gabodev>">
         </div>
         <nav>
+            <!-- lista -->
             <ul>
-                <li><a>Habilidades</a></li>
-                <li><a>Proyectos</a></li>
-                <li><a>Estudios</a></li>
-                <li><a>Experiencia</a></li>
-                <li><a>Contacto</a></li>
+                <li><a href="#Habilidades">Habilidades</a></li>
+                <li><a href="#Proyectos">Proyectos</a></li>
+                <li><a href="#About">Sobre mí</a></li>
+                <li><a href="#Contacto">Contacto</a></li>
+                
             </ul>
         </nav>
     
@@ -31,11 +33,13 @@
             <h1 class="nombre">Gabriel Castro</h1>
             <h4 class="soy">Desarrollador web</h4>
         </div>
-
-        <div class="skills">
-            <h2>Habilidades</h2>
+        <!--Titulos por nivel-->
+        
+        <div id="Habilidades" class="skills">
+            <h2 class="titulo-section">Habilidades</h2>
             <div class="Habilidades">
                 <div class="habilidad">
+                    <!--Imagenes-->
                     <img id="html" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2048px-HTML5_logo_and_wordmark.svg.png" alt="HTML">
                     <p>HTML</p>
                 </div>
@@ -62,6 +66,97 @@
             </div>
         </div>
 
+        <div id="Proyectos" class="proyectos">
+            <h2 class="titulo-section">Proyectos</h2>
+            <div class="proyecto">
+                <div class="proyecto1">
+                    <img class="img-proyecto" src="logo/pokeapi1.png" alt="1">
+                    <h2>Pagina web de Pokedex como práctica de diseño web y consulta de APIs.</h2>
+                </div>
+                <div class="proyecto">
+                    <img class="img-proyecto" src="logo/pokeapi2.png" alt="2">
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="subtitulo">
+                <h2>Ejemplo de Tabla</h2>
+            </div>
+            
+            <table class="default">
+                <tr>
+                <th>Hoy</th>
+                <th>Mañana</th>
+                <th>Lunes</th>
+                </tr>
+                <tr>
+                <td>Soleado</td>
+                <td>Mayormente soleado</td>
+                <td>Nublado</td>
+                </tr>
+                <tr>
+                    <td><i class="fa-solid fa-sun"></i></td>
+                    <td><i class="fa-sharp fa-solid fa-sun-cloud"></i></td>
+                    <td><i class="fa-solid fa-clouds"></i></td>
+                </tr>
+                <tr>
+                <td>19°C</td>
+                <td>17°C</td>
+                <td>12°C</td>
+                </tr>
+                <tr>
+                <td>E 13 km/h</td>
+                <td>E 11 km/h</td>
+                <td>S 16 km/h</td>
+                </tr>
+            
+            </table>
+
+            <div class="subtitulo">
+                <h2>Mira este video</h2>
+            </div>
+
+                <video controls>
+                    <source src="video/video.mp4" type="video/mp4">
+                    Hubo un error al cargar un video :(
+                </video>
+        </div>
+
+        <div id="About" class="about">
+            <h2 class="titulo-section">Sobre mí</h2>
+            <div class="about-me">
+                <div class="about-me1">
+                    <img class="img-about" src="logo/yo.png" alt="about">
+                </div>
+                <div class="about-me2">
+                    <h1>
+                        Soy un estudiante de ingeniería en computación, me gusta mucho la programación y el diseño web, me gusta mucho aprender cosas nuevas y me gusta mucho la tecnología.
+                        En mis tiempos libres me gusta tocar música, mi instrumento favorito es el bajo.
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <div id="Contacto" class="contacto-out">
+            <h2 class="titulo-section">Contacto</h2>
+            <div class="contacto">
+                <h1>Puedes contactarme por los siguientes medios:</h1>
+                <div class="contacto-into">
+                    <img class="img-contacto" src="logo/whatsapp.png" alt="whatsapp">
+                    <h2><i class="fa-brands fa-whatsapp"></i>Whatsapp: +593 967736530</h2>
+                </div>
+                <div class="contacto-into">
+                    <img class="img-contacto" src="logo/linkedin.png" alt="linkedin">
+                    <h2><i class="fa-brands fa-linkedin"></i>Linkedin: <a href="https://www.linkedin.com/in/gabriel-castro-gonz%C3%A1lez-81729b17b/">Gabriel Castro</a></h2>
+                </div>
+                <div class="contacto-into">
+                    <img class="img-contacto" src="logo/github.png" alt="github">
+                    <h2><i class="fa-brands fa-github"></i>Github: <a href="https://github.com/gabsito">gabsito</a></h2>
+                </div>
+            </div>
+        </div>
+
+        
     </section>
     <footer>
 

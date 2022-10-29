@@ -12,7 +12,10 @@ header{
 
 nav{
     display: contents;
+    position: fixed;
+    top: 0;
 }
+
 
 ul {
     list-style-type: none;
@@ -61,6 +64,7 @@ li a:active{
 }
 
 html{
+    scroll-behavior: smooth;
     font-family: "Teko", sans-serif;
     font-size: 1.3em;
     background-color: #303840;
@@ -105,6 +109,15 @@ section {
 
 .skills{
     padding-top: 2%;
+    
+}
+
+.Habilidades{
+    padding-top: 2%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -112,23 +125,48 @@ section {
     -webkit-backdrop-filter: blur(3px);
 }
 
-.Habilidades{
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    gap: 1rem;
-    
+@media (max-width: 768px) {
+    .Habilidades{
+        grid-template-columns: 1fr;
+    }
+    img{
+        width: 100%;
+    }
 }
 
 @media (min-width: 768px) {
     .Habilidades {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    img{
+        width: 80%;
+        height: 80%;
+    }
+
+    video{
+        width: 80%;
+    }
+    .img-about{
+        width: 50%;
+    }
 }
 
 @media (min-width: 1024px) {
     .Habilidades {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    img{
+        width: 60%;
+        height: 60%;
+    }
+
+    video{
+        width: 80%;
+    }
+    .img-about{
+        width: 25%;
     }
 }
 
@@ -156,6 +194,131 @@ section {
     width: 40%;
 }
 
+.img-proyecto{
+    border-radius: 5px;
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+}
+
+.proyecto h2{
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.proyecto{
+    align-items: center;
+}
+
+.titulo-section{
+    text-align: center;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+table{
+    align-self: center;
+    margin: auto;
+    width: 50%;
+    border-collapse: collapse;
+}
+
+th{
+    background-color: #f2f2f2;
+    
+}
+
+th, td{
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: transparent !important;
+    color: #f2f2f2;
+}
+
+tr:nth-child(odd) {background-color: #babddf;}
+tr:nth-child(even) {background-color: #ccc;}
+
+.subtitulo{
+    text-align: center;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    width: 25%;
+    margin: auto;
+}
+
+.subtitulo h2{
+    padding: 5px;
+}
+
+.img-about{
+    margin-top: 10px;
+    border-radius: 50%;
+    width: 50%;
+}
+
+.about-me{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.about-me h1{
+    text-align: justify;
+    padding-right: 10%;
+}
+
+.contacto{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
 
 
 
+.contacto .contacto-into{
+    display: grid;
+    grid-template-columns: 1fr ;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding-left: 3%;
+    padding-right: 3%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.contacto-into img{
+    margin: auto;
+    width: 50%;
+    height: auto;
+    padding-top: auto;
+}
+
+.contacto h1:first-child{
+    text-align: center;
+    grid-column: 1/4;
+}
