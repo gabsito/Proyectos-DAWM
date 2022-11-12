@@ -16,7 +16,7 @@ function fetchPokemons(number) {
 }
 
 function createPokemon(pokemon) {
-    const card = document.createElement("li");
+    const card = document.createElement("div");
     card.classList.add("poke-block");
 
     const spriteContainer = document.createElement("div");
@@ -41,4 +41,4 @@ function createPokemon(pokemon) {
     container.appendChild(card);
 }
 
-fetchPokemons(9);
+fetchPokemons(21);
