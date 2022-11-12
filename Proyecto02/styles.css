@@ -19,11 +19,11 @@
 body {
     background: rgb(85, 144, 189);
     background: linear-gradient(
-      90deg,
-      rgba(85, 144, 189, 1) 0%,
-      rgba(108, 183, 240, 1) 54%,
-      rgba(182, 216, 242, 1) 82%
+      135deg,
+      rgb(85, 189, 166) 0%,
+      rgb(108, 240, 233) 54%,
+      rgb(188, 182, 242) 82%
     );
     text-align: center;
-    font-family: "Oswald", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
   }
