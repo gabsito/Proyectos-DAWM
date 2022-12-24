@@ -4,6 +4,18 @@
     gap: 1rem;
 }
 
+.big-card {
+    display: flex;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 10%;
+    align-items: flex-start;
+}
+
 .card:hover {
     cursor: pointer;
     top: -5px;
@@ -13,16 +25,31 @@
     .poke-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
+    .big-card {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 990px) {
     .poke-container {
         grid-template-columns: 1fr 1fr;
     }
+
+    .big-card {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 600px) {
     .poke-container {
         grid-template-columns: 1fr;
+    }
+
+    .big-card {
+        display: flex;
+        flex-direction: column;
     }
 }
