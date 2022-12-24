@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.tittle{
+  font-size: 30px;
+  font-weight: 900;
+  color: #000000;
+  margin-top: 20px;
+}
+
+.corner-r{
+  border-radius: 0 0 0 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1000;
+}
+
+.searchbar{
+  width: 50%;
+  height: 30px;
+  border: transparent;
+  border-radius: 100px;
+  background-color: #D9D9D9;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
