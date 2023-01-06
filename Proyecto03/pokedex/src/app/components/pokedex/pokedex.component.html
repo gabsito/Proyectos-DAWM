@@ -10,24 +10,35 @@
   <rect width="300" height="300" fill="white" transform="translate(172.164 -154.909) rotate(35)"/>
   </clipPath>
   </defs>
-  </svg>
+</svg>
 
 
 <form>
-  <input class="searchbar" type="text" placeholder="&#xF002; Buscar" style="font-family:inter, FontAwesome" />
+  <input class="searchbar" type="text" placeholder="&#xF002; Buscar"
+  style="font-family:inter, FontAwesome" [(ngModel)]="searchQuery"
+  (ngModelChange)="searchPokemon()" [ngModelOptions]="{standalone: true}"/>
 </form>
 
-<div class="pokegrid">
-  <div class="pokecard">
+<a class="favorite_button" href="/favorites" ><i class="fa-solid fa-star"></i></a>
+
+<div class="pokegrid" >
+  <div class="pokecard" *ngFor="let pokemon of filteredPokemons" [ngStyle]="{'background-color': getColor(pokemon.type)}">
     <div class="container">
-      <h4 class="pokename"><b>Bulbasaur</b></h4>
+      <h4 class="pokename"><b>{{pokemon.name}}</b></h4>
     </div>
-    <img class="pokeimage" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="Bulbasaur" style="width:100%">
-  </div>
-  <div class="pokecard">
-    <div class="container">
-      <h4 class="pokename"><b>Ivysaur</b></h4>
-    </div>
-    <img class="pokeimage" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png" alt="Ivysaur" style="width:100%">
+    <img class="pokeimage" src="{{pokemon.sprite}}" alt="{{pokemon.name}}">
+    <svg class="pokecircle" width="141" height="140" viewBox="0 0 141 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g style="mix-blend-mode:color-burn" clip-path="url(#clip0_104_38)">
+      <rect width="100" height="100" transform="translate(58.1503) rotate(35)" fill="white"/>
+      <path d="M105.733 34.3564C95.9793 24.56 84.1245 19.6709 70.3379 19.659C56.6508 19.7168 44.8445 24.5031 35.1477 34.3265C26.4565 42.9257 21.6372 53.1978 20.6601 64.9735L46.1429 65.0169C48.3244 53.6395 58.3993 44.9708 70.434 44.9427C82.4686 44.9145 92.551 53.6059 94.6498 65.0138L120.133 65.0572C119.159 53.102 114.402 42.9481 105.733 34.3564ZM94.7083 74.2513C92.5267 85.6286 82.4518 94.2973 70.4172 94.3255C58.3825 94.3537 48.3001 85.6622 46.2013 74.2544L20.7185 74.211C21.6626 85.9969 26.5188 96.2206 35.1181 104.912C44.8718 114.708 56.6271 119.528 70.344 119.639C84.1306 119.651 95.8375 114.795 105.634 105.041C114.325 96.442 119.144 86.1699 120.121 74.3942L94.7083 74.2513Z" fill="#D1D3D4"/>
+      <path d="M70.3851 86.3516C79.6462 86.3517 87.154 78.8441 87.154 69.5829C87.1541 60.3218 79.6465 52.8141 70.3854 52.814C61.1242 52.8139 53.6165 60.3215 53.6164 69.5827C53.6163 78.8438 61.1239 86.3515 70.3851 86.3516Z" fill="#D1D3D4"/>
+      </g>
+      <defs>
+      <clipPath id="clip0_104_38">
+      <rect width="100" height="100" fill="white" transform="translate(58.1503) rotate(35)"/>
+      </clipPath>
+      </defs>
+      </svg>
+
   </div>
 </div>
