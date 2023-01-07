@@ -31,7 +31,8 @@ export class PokeService {
       name: info?.name,
       sprite: info.sprites.front_default,
       url: url,
-      type: info.types[0].type.name
+      type: info.types[0].type.name,
+      id: info.id
     }
     return poke;
   }

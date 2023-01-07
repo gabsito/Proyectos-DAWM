@@ -24,7 +24,7 @@
 <div class="pokegrid" >
   <div class="pokecard" *ngFor="let pokemon of filteredPokemons" [ngStyle]="{'background-color': getColor(pokemon.type)}">
     <div class="container">
-      <h4 class="pokename"><b>{{pokemon.name}}</b></h4>
+      <a routerLink="/pokemon/{{pokemon.id}}"><h4 class="pokename"><b>{{pokemon.name}}</b></h4></a>
     </div>
     <img class="pokeimage" src="{{pokemon.sprite}}" alt="{{pokemon.name}}">
     <svg class="pokecircle" width="141" height="140" viewBox="0 0 141 140" fill="none" xmlns="http://www.w3.org/2000/svg">

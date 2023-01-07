@@ -324,14 +324,14 @@ interface Stat {
   stat: Stat2;
 }
 
-interface Type2 {
+interface Type {
   name: string;
   url: string;
 }
 
-interface Type {
+interface Types {
   slot: number;
-  type: Type2;
+  type: Type[];
 }
 
 interface IPokemon {
@@ -351,7 +351,7 @@ interface IPokemon {
   species: Species;
   sprites: Sprites;
   stats: Stat[];
-  types: Type[];
+  types: Types[];
   weight: number;
 }
 
@@ -360,6 +360,7 @@ interface simplePokemon {
   url: string;
   sprite: string;
   type: string;
+  id: number
 }
 
 export { IPokemon, simplePokemon }

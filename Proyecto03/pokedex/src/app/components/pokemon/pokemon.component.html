@@ -1,1 +1,23 @@
-<p>pokemon works!</p>
+<section id="container">
+  <header>
+    <a href="/pokedex"><i class="fa-solid fa-arrow-left"></i></a>
+    <i class="fa-regular fa-star"></i>
+  </header>
+
+  <div class="top_info">
+    <div class="top_left">
+      <h1>{{pokemon.name}}</h1>
+      <h5 class="type">{{pokemon.types[0].type.name}}</h5>
+      <h5 class="type">{{pokemon.types[1]?.type.name}}</h5>
+    </div>
+    <div class="top_right">
+      <h1>#{{pokemon.id}}</h1>
+    </div>
+  </div>
+
+</section>
+
+<section class="botton_info">
+
+</section>
+
