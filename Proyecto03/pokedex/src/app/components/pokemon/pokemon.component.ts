@@ -11,6 +11,7 @@ export class PokemonComponent implements OnInit {
 
   pokemon: any;
   color: string = "";
+  idRaw = "";
 
   constructor(private route: ActivatedRoute, private pokeservice: PokeService) {
     this.route.params.subscribe(async params => {
@@ -20,6 +21,7 @@ export class PokemonComponent implements OnInit {
       console.log(this.pokemon);
 
       // format pokemon id
+      this.idRaw = this.pokemon.id.toString();
       this.pokemon.id = this.pokemon.id.toString().padStart(3, '0');
 
       this.color = this.getColor(this.pokemon.types[0].type.name);

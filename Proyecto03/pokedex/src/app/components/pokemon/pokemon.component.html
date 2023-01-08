@@ -1,23 +1,43 @@
-<section id="container">
-  <header>
-    <a href="/pokedex"><i class="fa-solid fa-arrow-left"></i></a>
-    <i class="fa-regular fa-star"></i>
-  </header>
+<div class="box">
+  <section id="container">
+    <header>
+      <a href="/pokedex"><i class="fa-solid fa-arrow-left"></i></a>
+      <i class="fa-regular fa-star"></i>
+    </header>
 
-  <div class="top_info">
-    <div class="top_left">
-      <h1>{{pokemon.name}}</h1>
-      <h5 class="type">{{pokemon.types[0].type.name}}</h5>
-      <h5 class="type">{{pokemon.types[1]?.type.name}}</h5>
+    <div class="top_info">
+      <div class="top_left">
+        <h1>{{pokemon.name}}</h1>
+        <h5 class="type">{{pokemon.types[0].type.name}}</h5>
+        <h5 class="type">{{pokemon.types[1]?.type.name}}</h5>
+      </div>
+      <div class="top_right">
+        <h1>#{{pokemon.id}}</h1>
+      </div>
     </div>
-    <div class="top_right">
-      <h1>#{{pokemon.id}}</h1>
+    <div class="img_container">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{idRaw}}.png" alt="{{pokemon.name}}">
+      <svg width="390" height="418" viewBox="0 0 390 418" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_113_57)">
+        <path d="M300.759 103.076C271.498 73.6868 235.933 59.0193 194.574 58.9837C153.512 59.1571 118.093 73.5161 89.0031 102.986C62.9294 128.784 48.4716 159.6 45.5401 194.928L121.988 195.058C128.533 160.926 158.758 134.919 194.862 134.835C230.966 134.75 261.213 160.825 267.509 195.048L343.957 195.178C341.036 159.313 326.766 128.851 300.759 103.076ZM267.684 222.761C261.14 256.893 230.915 282.899 194.811 282.983C158.707 283.068 128.46 256.994 122.164 222.77L45.7154 222.64C48.5475 257.998 63.1162 288.669 88.9139 314.742C118.175 344.131 153.441 358.59 194.592 358.924C235.951 358.96 271.072 344.392 300.461 315.13C326.534 289.333 340.992 258.516 343.924 223.189L267.684 222.761Z" fill="white" fill-opacity="0.26"/>
+        <path d="M194.704 259.055C222.488 259.055 245.011 236.532 245.011 208.749C245.011 180.965 222.488 158.442 194.705 158.442C166.922 158.442 144.398 180.964 144.398 208.748C144.398 236.531 166.921 259.054 194.704 259.055Z" fill="white" fill-opacity="0.26"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_113_57">
+        <rect width="300" height="300" fill="white" transform="translate(158) rotate(35)"/>
+        </clipPath>
+        </defs>
+      </svg>
+
     </div>
-  </div>
 
-</section>
+  </section>
+  <section class="botton_info">
 
-<section class="botton_info">
+  </section>
 
-</section>
+</div>
+
+
+
 
