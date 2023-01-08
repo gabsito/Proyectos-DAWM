@@ -77,6 +77,7 @@ h1 {
 img{
   width: 235px;
   height: 235px;
+  margin-top: 4.5rem
 }
 
 .img_container img {
@@ -87,4 +88,49 @@ img{
 .img_container svg {
   z-index: 0;
   position: absolute;
+  margin-top: 1.7rem
 }
+
+.star {
+  position: absolute;
+  top: 10rem;
+}
+
+.botton_info {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top:#fff solid;
+  top: 45vh;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
+  border-radius: 23px 23px 0px 0px;
+}
+
+#stats {
+  background: #62D597;
+  border-radius: 98px;
+  width: 261px;
+  height: 93px;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: xx-large;
+  margin-bottom: 5rem;
+}
+
+p {
+  margin: 7vw;
+  margin-bottom: 20vw;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  text-align: justify;
+  font-size: large;
+}
+
+.species_tittle {
+  margin-top: 10vh;
+}
+

@@ -10,6 +10,7 @@ import { PokeService } from 'src/app/services/pokeservice.service';
 export class PokemonComponent implements OnInit {
 
   pokemon: any;
+  species: any;
   color: string = "";
   idRaw = "";
 
@@ -26,10 +27,15 @@ export class PokemonComponent implements OnInit {
 
       this.color = this.getColor(this.pokemon.types[0].type.name);
       let container = document.getElementById('container');
+      let stats = document.getElementById('stats');
       if (container) {
         container.style.backgroundColor = this.color;
       }
+      if (stats) {
+        stats.style.backgroundColor = this.color;
+      }
 
+      await this.getSpeciesInfo();
 
     });
 
@@ -79,6 +85,14 @@ export class PokemonComponent implements OnInit {
       default:
         return 'white';
     }
+  }
+
+  async getSpeciesInfo() {
+    let url = this.pokemon.species.url;
+    this.species = await this.pokeservice.getPokeInfo(url);
+    console.log(this.species);
+
+
   }
 
 }
