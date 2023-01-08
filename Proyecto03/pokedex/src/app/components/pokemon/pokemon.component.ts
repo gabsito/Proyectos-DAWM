@@ -84,8 +84,8 @@ export class PokemonComponent implements OnInit {
     let url = this.pokemon.species.url;
     this.species = await this.pokeservice.getPokeInfo(url);
     console.log(this.species);
-
-
   }
+
+
 
 }

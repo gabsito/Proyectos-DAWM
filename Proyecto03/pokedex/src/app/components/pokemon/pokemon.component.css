@@ -125,6 +125,9 @@ img{
   font-weight: 700;
   font-size: xx-large;
   margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 p {

@@ -1,0 +1,25 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  font-size: xx-large;
+  padding: 5%;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.info {
+  display: flex;
+}

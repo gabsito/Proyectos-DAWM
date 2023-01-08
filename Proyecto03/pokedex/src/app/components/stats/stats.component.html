@@ -1,1 +1,19 @@
-<p>stats works!</p>
+<header>
+  <a href="/pokedex"><i class="fa-solid fa-arrow-left"></i></a>
+  <i class="fa-regular fa-star"></i>
+</header>
+<section class="top">
+  <h1>{{pokemon.name}}</h1>
+  <h1>#{{idFormat}}</h1>
+</section>
+<section class="info">
+  <div class="pokeTop">
+    <div class="types">
+      <div class="type" *ngFor="let type of pokemon.types">
+        <img [src]="type.type.url" alt="">
+        <h2>{{type.type.name}}</h2>
+      </div>
+    </div>
+
+  </div>
+</section>
