@@ -26,14 +26,7 @@ export class PokemonComponent implements OnInit {
       this.pokemon.id = this.pokemon.id.toString().padStart(3, '0');
 
       this.color = this.getColor(this.pokemon.types[0].type.name);
-      let container = document.getElementById('container');
-      let stats = document.getElementById('stats');
-      if (container) {
-        container.style.backgroundColor = this.color;
-      }
-      if (stats) {
-        stats.style.backgroundColor = this.color;
-      }
+      document.body.style.backgroundColor = this.color;
 
       await this.getSpeciesInfo();
 

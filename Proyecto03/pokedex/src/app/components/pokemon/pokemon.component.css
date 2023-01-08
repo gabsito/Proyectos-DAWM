@@ -68,16 +68,22 @@ h1 {
 }
 
 
-/* set image inside img_conteiner size: 235x235 */
 .img_container {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 30vh;
+  width: 100%;
 }
+
 img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 235px;
   height: 235px;
-  margin-top: 4.5rem
+  bottom: 0vh;
 }
 
 .img_container img {
@@ -103,7 +109,7 @@ img{
   flex-direction: column;
   align-items: center;
   border-top:#fff solid;
-  top: 45vh;
+  top: 50vh;
   background-color: #fff;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
   border-radius: 23px 23px 0px 0px;
