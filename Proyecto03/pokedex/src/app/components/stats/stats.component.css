@@ -96,3 +96,9 @@ th{
 #otherTable {
   padding-top: 3rem;
 }
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 45vw;
+}
