@@ -41,6 +41,11 @@ export class SplashComponent implements OnInit {
 
     this.router.navigate(['/pokedex']);
 
+    let favorites = localStorage.getItem('favorites');
+    if (!favorites) {
+      localStorage.setItem('favorites', JSON.stringify([]));
+    }
+
   }
 
 }

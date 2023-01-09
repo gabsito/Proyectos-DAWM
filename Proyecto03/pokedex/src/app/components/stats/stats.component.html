@@ -1,19 +1,99 @@
-<header>
-  <a href="/pokedex"><i class="fa-solid fa-arrow-left"></i></a>
-  <i class="fa-regular fa-star"></i>
-</header>
-<section class="top">
-  <h1>{{pokemon.name}}</h1>
-  <h1>#{{idFormat}}</h1>
-</section>
-<section class="info">
-  <div class="pokeTop">
-    <div class="types">
-      <div class="type" *ngFor="let type of pokemon.types">
-        <img [src]="type.type.url" alt="">
-        <h2>{{type.type.name}}</h2>
+<div id="allContainer">
+  <div>
+    <header>
+      <a href="/pokemon/{{pokemon.id}}"><i class="fa-solid fa-arrow-left"></i></a>
+      <a (click)='favorite()'><i class="fa-{{isFavorite(pokemon.id) ? 'solid' : 'regular' }} fa-star"></i></a>
+    </header>
+    <section class="top">
+      <h1>{{pokemon.name}}</h1>
+      <h1>#{{idFormat}}</h1>
+    </section>
+  </div>
+  <section class="info">
+    <div class="pokeTop">
+      <div class="types">
+        <div class="type" *ngFor="let type of pokemon.types" style="width: 150px;
+        height: 46.62px;
+        background: {{getColor(type.type.name)}};
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;">
+          <h2 >{{type.type.name}}</h2>
+        </div>
       </div>
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png" alt="{{pokemon.name}}">
+    </div>
+    <div class="pokeBottom">
+      <!-- stats table -->
+      <table id="statsTable">
+        <tr>
+          <th>HP</th>
+          <td>{{pokemon.stats[0].base_stat}}</td>
+          <td>
+            <div style="background-color: {{rateStat(pokemon.stats[0].base_stat)}}; border: 1px solid gray; width: calc(50vw * {{pokemon.stats[0].base_stat}}/250); border-radius:5px; height:12px"></div>
+          </td>
+        </tr>
+        <tr>
+          <th>Attack</th>
+          <td>{{pokemon.stats[1].base_stat}}</td>
+          <td>
+            <div style="background-color: {{rateStat(pokemon.stats[1].base_stat)}}; border: 1px solid gray; width: calc(50vw * {{pokemon.stats[1].base_stat}}/250); border-radius:5px; height:12px"></div>
+          </td>
+        </tr>
+        <tr>
+          <th>Defense</th>
+          <td>{{pokemon.stats[2].base_stat}}</td>
+          <td>
+            <div style="background-color: {{rateStat(pokemon.stats[2].base_stat)}}; border: 1px solid gray; width: calc(50vw * {{pokemon.stats[2].base_stat}}/250); border-radius:5px; height:12px"></div>
+          </td>
+        </tr>
+        <tr>
+          <th>Sp. Atk</th>
+          <td>{{pokemon.stats[3].base_stat}}</td>
+          <td>
+            <div style="background-color: {{rateStat(pokemon.stats[3].base_stat)}}; border: 1px solid gray; width: calc(50vw * {{pokemon.stats[3].base_stat}}/250); border-radius:5px; height:12px"></div>
+          </td>
+        </tr>
+        <tr>
+          <th>Sp. Def</th>
+          <td>{{pokemon.stats[4].base_stat}}</td>
+          <td>
+            <div style="background-color: {{rateStat(pokemon.stats[4].base_stat)}}; border: 1px solid gray; width: calc(50vw * {{pokemon.stats[4].base_stat}}/250); border-radius:5px; height:12px"></div>
+          </td>
+        </tr>
+        <tr>
+          <th>Speed</th>
+          <td>{{pokemon.stats[5].base_stat}}</td>
+          <td>
+            <div style="background-color: {{rateStat(pokemon.stats[5].base_stat)}}; border: 1px solid gray; width: calc(50vw * {{pokemon.stats[5].base_stat}}/250); border-radius:5px; height:12px"></div>
+          </td>
+        </tr>
+        <tr>
+          <th>Total</th>
+          <td>{{getTotalStats()}}</td>
+        </tr>
+      </table>
+
+      <table id="otherTable">
+        <tr>
+          <th>Height</th>
+          <td>{{getFormatedHeight()}}</td>
+        </tr>
+        <tr>
+          <th>Weight</th>
+          <td>{{getFormatedWeight()}}</td>
+        </tr>
+        <tr>
+          <th>Abilities</th>
+          <td>
+            <div class="abilities" *ngFor="let ability of pokemon.abilities">
+              <p>{{ability.ability.name}}</p>
+            </div>
+          </td>
+        </tr>
+      </table>
     </div>
 
-  </div>
-</section>
+  </section>
+</div>

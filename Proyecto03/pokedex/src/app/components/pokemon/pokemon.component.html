@@ -2,14 +2,18 @@
   <section id="container">
     <header>
       <a href="/pokedex"><i class="fa-solid fa-arrow-left"></i></a>
-      <i class="fa-regular fa-star"></i>
+      <a (click)='favorite()'><i class="fa-{{isFavorite(idRaw) ? 'solid' : 'regular' }} fa-star"></i></a>
+
     </header>
 
     <div class="top_info">
       <div class="top_left">
         <h1>{{pokemon.name}}</h1>
-        <h5 class="type">{{pokemon.types[0].type.name}}</h5>
-        <h5 class="type">{{pokemon.types[1]?.type.name}}</h5>
+        <div class="types">
+          <div class="type" *ngFor="let type of pokemon.types">
+            <h5 >{{type.type.name}}</h5>
+          </div>
+        </div>
       </div>
       <div class="top_right">
         <h1>#{{pokemon.id}}</h1>
@@ -35,7 +39,7 @@
   <section class="botton_info">
     <h1 class="species_tittle">{{species.genera[7].genus}}</h1>
     <p>{{species.flavor_text_entries[0].flavor_text}}</p>
-    <a id="stats" href="/pokemon/stats/{{idRaw}}">See Stats</a>
+    <a id="stats" href="/pokemon/stats/{{idRaw}}" style="background-color: {{color}};">See Stats</a>
   </section>
 
 

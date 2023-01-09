@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PokeService } from 'src/app/services/pokeservice.service';
 
+
 @Component({
   selector: 'app-stats',
   templateUrl: './stats.component.html',
@@ -12,6 +13,7 @@ export class StatsComponent implements OnInit {
   idFormat = "";
   species: any;
   color: string = "";
+  favorites: string[] = [];
 
   constructor(private route: ActivatedRoute, private pokeservice: PokeService) {
     this.route.params.subscribe(async params => {
@@ -26,6 +28,9 @@ export class StatsComponent implements OnInit {
       document.body.style.backgroundColor = this.color;
 
       await this.getSpeciesInfo();
+
+      this.getFavorites();
+
     });
    }
 
@@ -80,4 +85,61 @@ export class StatsComponent implements OnInit {
     this.species = await this.pokeservice.getPokeInfo(url);
     console.log(this.species);
   }
+
+
+//  rate stat
+  rateStat(stat: number) {
+    if (stat >= 200) {
+      return '#0E4490';
+    } else if (stat >= 150) {
+      return '#18915C';
+    } else if (stat >= 100) {
+      return '#FACF48';
+    } else if (stat >= 50) {
+      return '#F32E12';
+    } else {
+      return '#DD0000';
+    }
+  }
+
+  // get formated string height and weight in meters, kilograms
+  getFormatedHeight() {
+    let height = this.pokemon.height;
+    return (height / 10).toString() + " m";
+  }
+  getFormatedWeight() {
+    let weight = this.pokemon.weight;
+    return (weight / 10).toString() + " kg";
+  }
+
+  getTotalStats() {
+    let total = 0;
+    for (let i = 0; i < this.pokemon.stats.length; i++) {
+      total += this.pokemon.stats[i].base_stat;
+    }
+    return total;
+  }
+
+  favorite() {
+    if(this.isFavorite(this.pokemon.id)) {
+      this.favorites = this.favorites.filter((id: string) => id !== this.pokemon.id.toString());
+      localStorage.setItem('favorites', JSON.stringify(this.favorites));
+    }
+    else {
+      this.favorites.push(this.pokemon.id.toString());
+      localStorage.setItem('favorites', JSON.stringify(this.favorites));
+    }
+
+  }
+
+  isFavorite(id: string) {
+    return this.favorites.includes(id.toString());
+  }
+
+  getFavorites() {
+    if(localStorage.getItem('favorites')) {
+      this.favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
+    }
+  }
+
 }

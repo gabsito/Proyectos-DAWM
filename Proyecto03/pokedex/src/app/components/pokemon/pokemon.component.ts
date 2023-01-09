@@ -13,6 +13,7 @@ export class PokemonComponent implements OnInit {
   species: any;
   color: string = "";
   idRaw = "";
+  favorites: string[] = [];
 
   constructor(private route: ActivatedRoute, private pokeservice: PokeService) {
     this.route.params.subscribe(async params => {
@@ -29,6 +30,8 @@ export class PokemonComponent implements OnInit {
       document.body.style.backgroundColor = this.color;
 
       await this.getSpeciesInfo();
+
+      this.getFavorites();
 
     });
 
@@ -86,6 +89,32 @@ export class PokemonComponent implements OnInit {
     console.log(this.species);
   }
 
+  favorite() {
+    console.log(this.favorites);
 
+    if(this.isFavorite(this.idRaw)) {
+      this.favorites = this.favorites.filter((id: string) => id !== this.idRaw);
+      localStorage.setItem('favorites', JSON.stringify(this.favorites));
+      console.log('quitando de favoritos');
+
+
+    }
+    else {
+      this.favorites.push(this.idRaw);
+      localStorage.setItem('favorites', JSON.stringify(this.favorites));
+      console.log('agregado a favorito');
+    }
+
+  }
+
+  isFavorite(id: string) {
+    return this.favorites.includes(id);
+  }
+
+  getFavorites() {
+    if(localStorage.getItem('favorites')) {
+      this.favorites = JSON.parse(localStorage.getItem('favorites') || '{}');
+    }
+  }
 
 }
